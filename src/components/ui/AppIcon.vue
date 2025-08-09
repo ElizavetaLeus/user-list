@@ -7,15 +7,12 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  icon: {
-    type: String,
-    required: true,
-  },
-  size: {
-    type: Number,
-    default: 20,
-  }
+interface Props {
+  icon: string;
+  size?: number;
+}
+withDefaults(defineProps<Props>(), {
+  size: 20,
 })
 </script>
 
