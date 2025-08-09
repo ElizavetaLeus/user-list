@@ -2,7 +2,9 @@
   <div class="container">
     <h1 :class="$style.title">Пользователи</h1>
     <div :class="$style.filterUsers">
-      <SetUsers />
+      <SetUsers 
+        inputValue=""
+      />
     </div>
     <UserIcon />
   </div>
