@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { icons } from '../icons/icons';
+import { icons } from '../../icons/icons';
 import AppIcon from '../AppIcon.vue';
 </script>
 
