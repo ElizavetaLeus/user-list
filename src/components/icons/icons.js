@@ -1,0 +1,3 @@
+export const icons = { 
+  userIcon: '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6667 18V16.3333C15.6667 15.4493 15.3155 14.6014 14.6904 13.9763C14.0652 13.3512 13.2174 13 12.3333 13H7.33333C6.44928 13 5.60143 13.3512 4.97631 13.9763C4.35119 14.6014 4 15.4493 4 16.3333V18" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.83333 9.66667C11.6743 9.66667 13.1667 8.17428 13.1667 6.33333C13.1667 4.49238 11.6743 3 9.83333 3C7.99238 3 6.5 4.49238 6.5 6.33333C6.5 8.17428 7.99238 9.66667 9.83333 9.66667Z" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/></svg>' 
+};

@@ -1,0 +1,22 @@
+body {
+    /* Шрифты */
+    --font-family-primary: 'Roboto', sans-serif;
+    /* базовые цвета */
+    --color-white-base: 255, 255, 255;
+    --color-gray-base: 246, 248, 252;
+    --color-dark-gray-base: 131, 148, 167;
+    --color-pink-base: 238, 67, 130;
+    --color-violet-base: 147, 74, 249;
+    --color-blue-base: 67, 97, 238;
+    --color-black-base: 0, 0, 0;
+    /* цвета */
+    --color-white: rgb(var(--color-white-base));
+    --color-gray: rgb(var(--color-gray-base));
+    --color-dark-gray: rgb(var(--color-dark-gray-base));
+    --color-pink: rgb(var(--color-pink-base));
+    --color-violet: rgb(var(--color-violet-base));
+    --color-blue: rgb(var(--color-blue-base));
+    --color-black: rgb(var(--color-black-base));
+    /* цвета с прозрачностью */
+    --color-dark-gray-10: rgb(var(--color-dark-gray-base), 10%);
+}

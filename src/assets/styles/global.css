@@ -1,0 +1,10 @@
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--color-gray);
+  color: var(--color-black);
+}
+.container {
+  margin-inline-start: 120px;
+  margin-inline-end: 130px;
+  margin-block-start: 74px;
+}
