@@ -2,13 +2,14 @@
   <div class="container">
     <h1 :class="$style.title">Пользователи</h1>
     <div :class="$style.filterUsers">
-      <SetUsers 
+      <FilterUsers
         inputValue=""
+        :filterUsers="setFilters($event)"
       />
     </div>
     <div :class="$style.userCards">
       <UserCard 
-        :userlist="userListDefault[0]"
+        :userlist="userList"
         v-for="user in userListDefault"
         :key="user.id"
         :user="user"
@@ -18,9 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import SetUsers from '@/components/SetUsers.vue';
 import UserCard from '@/components/ui/UserCard.vue';
-// import { ref } from 'process';
+import { ref } from 'process';
+import FilterUsers from '@/components/FilterUsers.vue';
+import { computed } from 'vue';
 
 const userListDefault = [
   { id: 1001, name: 'Ваня', role: 'user' },
@@ -30,11 +32,28 @@ const userListDefault = [
   { id: 1005, name: 'Пупа', role: 'user' },
   { id: 1006, name: 'Лупа', role: 'user' }
 ];
-// const filters = ref({
-//   role: 'all',
-//   query: '',
-// })
+const filters = ref({
+  role: 'all',
+  query: '',
+})
 
+
+const setFilters = (params) => {
+  if (params.type === 'InputValue') {
+    filters.value.query = params.value;
+  }
+  if (params.type === 'UserRole') {
+    filters.value.role = params.value;
+  }
+}
+const userList = computed(() => {
+  return userListDefault.filter((user) => {
+    const hasUserRole = user.role===filters.value.role || filters.value.role === 'all';
+    const hasUserNameQuery = user.name.toLowerCase().includes(filters.value.query.toLowerCase());
+    
+    return hasUserRole && hasUserNameQuery;
+  })
+})
 </script>
 
 <style module>
