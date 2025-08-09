@@ -4,7 +4,7 @@
     <div :class="$style.filterUsers">
       <FilterUsers
         inputValue=""
-        :filterUsers="setFilters($event)"
+        @filterUsers="setFilters($event)"
       />
     </div>
     <div :class="$style.userCards">
@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import UserCard from '@/components/ui/UserCard.vue';
-import { ref } from 'process';
+import { ref } from 'vue';
 import FilterUsers from '@/components/FilterUsers.vue';
 import { computed } from 'vue';
 
