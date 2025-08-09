@@ -30,19 +30,20 @@ interface Props {
 interface Emits {
   (event: 'filterUsers', params: FilterParams):void,
 }
-
-const inputValueLocal = ref('');
+interface FilterParams {
+  type: 'UserRole' | 'InputValue';
+  value: string;
+}
 defineProps<Props>();
 const emits = defineEmits<Emits>();
+
+const inputValueLocal = ref('');
 const buttonList = ref ([
   { id: 1, text: 'Все пользователи', isActive: true, color: 'blue', role: 'all' },
   { id: 2, text: 'Админы', isActive: false, color: 'pink', role: 'admin' },
   { id: 3, text: 'Редакторы', isActive: false, color: 'violet', role: 'editor' }
 ]);
-interface FilterParams {
-  type: 'UserRole' | 'InputValue';
-  value: string;
-}
+
 const filterUsers = (params: FilterParams) => {
   emits('filterUsers', params)
 }

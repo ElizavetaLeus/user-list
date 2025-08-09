@@ -18,14 +18,16 @@ interface Props {
   user: {id: number, name: string, role: string},
 }
 const props = defineProps<Props>();
+
+const $style = useCssModule();
+
 const userClassList = computed(() => {
   return [
     $style.userIconRole,
     props.user.role === 'admin' && $style.userIconAdmin,
     props.user.role === 'editor' && $style.userIconEditor
   ]
-})
-const $style = useCssModule();
+});
 </script>
 
 <style module>

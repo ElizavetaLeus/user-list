@@ -36,15 +36,6 @@ const filters = ref({
   query: '',
 })
 
-
-const setFilters = (params) => {
-  if (params.type === 'InputValue') {
-    filters.value.query = params.value;
-  }
-  if (params.type === 'UserRole') {
-    filters.value.role = params.value;
-  }
-}
 const userList = computed(() => {
   return userListDefault.filter((user) => {
     const hasUserRole = user.role===filters.value.role || filters.value.role === 'all';
@@ -53,6 +44,14 @@ const userList = computed(() => {
     return hasUserRole && hasUserNameQuery;
   })
 })
+const setFilters = (params) => {
+  if (params.type === 'InputValue') {
+    filters.value.query = params.value;
+  }
+  if (params.type === 'UserRole') {
+    filters.value.role = params.value;
+  }
+}
 </script>
 
 <style module>

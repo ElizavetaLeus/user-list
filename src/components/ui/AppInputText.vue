@@ -15,7 +15,8 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   placeholder: 'Поиск',
   value: ''
-})
+});
+
 const emits = defineEmits(['input'])
 
 const handlerInput = (event: Event) => {

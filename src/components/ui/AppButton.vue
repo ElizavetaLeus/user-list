@@ -12,21 +12,19 @@
 <script setup lang="ts">
 import { computed, useCssModule } from 'vue';
 
-const emits = defineEmits(['click'])
-const props = defineProps({
-  isActive: {
-    type: Boolean,
-    default: false,
-  },
-  color: {
-    type: String,
-    default: 'blue',
-  },
-  text: {
-    type: String,
-    requered: true,
-  }
-})
+interface Props {
+  text: string;
+  isActive?: boolean;
+  color?: string;
+}
+const props = withDefaults(defineProps<Props>(), {
+  isActive: false,
+  color: 'blue',
+});
+
+const emits = defineEmits(['click']);
+const $style = useCssModule();
+
 const buttonClassList = computed(() => {
   return [
     $style.button,
@@ -35,8 +33,6 @@ const buttonClassList = computed(() => {
     props.color === 'violet' && $style.buttonViolet
   ]
 })
-const $style = useCssModule();
-
 const emitListener = () => {
   emits('click');
 }
