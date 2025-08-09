@@ -9,8 +9,7 @@
     </div>
     <div :class="$style.userCards">
       <UserCard 
-        :userlist="userList"
-        v-for="user in userListDefault"
+        v-for="user in userList"
         :key="user.id"
         :user="user"
       />
