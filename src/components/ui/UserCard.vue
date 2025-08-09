@@ -14,12 +14,10 @@ import { icons } from '@/icons/icons';
 import { computed, useCssModule } from 'vue';
 import AppIcon from '@/components/ui/AppIcon.vue';
 
-const props = defineProps({
-  user: {
-    type: Object,
-    required: true,
-  }
-})
+interface Props {
+  user: {id: number, name: string, role: string},
+}
+const props = defineProps<Props>();
 const userClassList = computed(() => {
   return [
     $style.userIconRole,
