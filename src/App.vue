@@ -3,7 +3,7 @@
     <h1 :class="$style.title">Пользователи</h1>
     <div :class="$style.filterUsers">
       <FilterUsers
-        inputValue=""
+        :inputValue="filters.query"
         @filterUsers="setFilters($event)"
       />
     </div>
@@ -69,5 +69,21 @@ const userList = computed(() => {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
   margin-top: 30px;
+}
+@media screen and (max-width: 1280px) {
+  .userCards {
+  grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 925px) {
+  .userCards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 700px) {
+  .userCards {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

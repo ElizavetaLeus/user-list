@@ -75,4 +75,17 @@ const setInputValue = (value: string) => {
 .inputText {
   max-width: 266px;
 }
+@media screen and (max-width: 925px) {
+  .filterUsers {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .buttonList {
+    flex-direction: column;
+  }
+  
+}
 </style>
