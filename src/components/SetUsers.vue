@@ -21,8 +21,8 @@
 
 <script setup>
 import { ref } from 'vue';
-import AppButton from './ui/AppButton.vue';
-import AppInputText from './ui/AppInputText.vue';
+import AppButton from '@/components/ui/AppButton.vue';
+import AppInputText from '@/components/ui/AppInputText.vue';
 
 const inputValueLocal = ref('');
 defineProps({

@@ -9,8 +9,8 @@
 </template>
 
 <script setup>
-import SetUsers from './components/SetUsers.vue';
-import UserIcon from './components/ui/UserIcon.vue';
+import SetUsers from '@/components/SetUsers.vue';
+import UserIcon from '@/components/ui/UserIcon.vue';
 
 
 </script>
