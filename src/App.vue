@@ -6,12 +6,14 @@
         inputValue=""
       />
     </div>
-    <UserCard 
-      :userlist="userListDefault[0]"
-      v-for="user in userListDefault"
-      :key="user.id"
-      :user="user"
-    />
+    <div :class="$style.userCards">
+      <UserCard 
+        :userlist="userListDefault[0]"
+        v-for="user in userListDefault"
+        :key="user.id"
+        :user="user"
+      />
+    </div>
   </div>
 </template>
 
@@ -43,5 +45,11 @@ const userListDefault = [
 }
 .filterUsers {
   margin-top: 40px;
+}
+.userCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
 }
 </style>
