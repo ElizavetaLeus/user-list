@@ -8,17 +8,14 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
-  placeholder: {
-    type: String,
-    default: 'Поиск',
-  },
-  value: {
-    type: String,
-    default:'',
-  }
+interface Props {
+  placeholder?: string;
+  value?: string;
+}
+withDefaults(defineProps<Props>(), {
+  placeholder: 'Поиск',
+  value: ''
 })
-
 const emits = defineEmits(['input'])
 
 const handlerInput = (event: Event) => {
