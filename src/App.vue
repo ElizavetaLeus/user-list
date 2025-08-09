@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import SetUsers from '@/components/SetUsers.vue';
 import UserIcon from '@/components/ui/UserIcon.vue';
 

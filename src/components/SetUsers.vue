@@ -19,7 +19,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 import AppButton from '@/components/ui/AppButton.vue';
 import AppInputText from '@/components/ui/AppInputText.vue';
@@ -37,11 +37,14 @@ const buttonList = ref ([
   { id: 2, text: 'Админы', isActive: false, color: 'pink', role: 'admin' },
   { id: 3, text: 'Редакторы', isActive: false, color: 'violet', role: 'editor' }
 ]);
-
-const filterUsers = (params) => {
+interface FilterParams {
+  type: 'UserRole' | 'InputValue';
+  value: string;
+}
+const filterUsers = (params: FilterParams) => {
   emits('filterUsers', params)
 }
-const setActiveButton = (role) => {
+const setActiveButton = (role: string) => {
   buttonList.value = buttonList.value.map((button) => {
     button.isActive = false;
     if (button.role === role) {
@@ -52,7 +55,7 @@ const setActiveButton = (role) => {
 
   filterUsers({ type: 'UserRole', value: role });
 }
-const setInputValue = (value) => {
+const setInputValue = (value: string) => {
   inputValueLocal.value = value;
   filterUsers({ type: 'InputValue', value: inputValueLocal.value });
 }

@@ -7,7 +7,7 @@
     @input="handlerInput($event)">
 </template>
 
-<script setup>
+<script setup lang="ts">
 defineProps({
   placeholder: {
     type: String,
@@ -21,8 +21,9 @@ defineProps({
 
 const emits = defineEmits(['input'])
 
-const handlerInput = (event)=>{
-  emits('input', event.target.value)
+const handlerInput = (event: Event) => {
+  const inputElement = event.target as HTMLInputElement;
+  emits('input', inputElement.value)
 }
 </script>
 

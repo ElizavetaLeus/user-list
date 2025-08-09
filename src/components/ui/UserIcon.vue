@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { icons } from '@/icons/icons';
 import AppIcon from '@/components/ui/AppIcon.vue';
 </script>
